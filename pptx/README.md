@@ -4,12 +4,12 @@ Due template `.pptx` conformi a **WCAG 2.1 AA**:
 
 | File | Quando usarlo |
 |------|---------------|
-| `regione-basilicata-istituzionale.pptx` | **Presentazioni ufficiali della Regione Basilicata** — convegni, audizioni, comunicati pubblici, presentazioni in commissione. 12 slide con cornice istituzionale, fotografie e KPI |
+| `Template-per-presentazioni-istituzionali-della-Regione.pptx` | **Presentazioni ufficiali della Regione Basilicata** — convegni, audizioni, comunicati pubblici, presentazioni in commissione. Cornice istituzionale, fotografie e KPI |
 | `presentazione-base.pptx` | Presentazioni interne rapide, riunioni di servizio, slide di lavoro. 10 layout-tipo più sobri, senza fotografie |
 
 ## Quando usare quale
 
-- **Contesto istituzionale, pubblico esterno** → `regione-basilicata-istituzionale.pptx`
+- **Contesto istituzionale, pubblico esterno** → `Template-per-presentazioni-istituzionali-della-Regione.pptx`
 - **Riunioni interne, presentazioni veloci** → `presentazione-base.pptx`
 
 ## Caratteristiche di accessibilità incorporate (entrambi)
