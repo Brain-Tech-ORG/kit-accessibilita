@@ -31,3 +31,12 @@ build/
 
 # Log
 *.log
+
+# Repository remoto «kit-accessibilita»: solo cartelle template nella root pubblicata
+/anteprime/
+/docs/
+/README.md
+/CONTRIBUTING.md
+/LICENSE
+/inizializza-repo.bat
+/inizializza-repo.sh
