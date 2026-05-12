@@ -1,26 +1,28 @@
-# Template PowerPoint accessibile
+# Template PowerPoint accessibili
 
-Un template `.pptx` con dieci layout-tipo, conforme a **WCAG 2.1 AA**:
+Due template `.pptx` conformi a **WCAG 2.1 AA**:
 
-| File | Contenuto |
-|------|-----------|
-| `presentazione-base.pptx` | Copertina, agenda, divisorio sezione, contenuto a punti, confronto a due colonne, dato chiave, tabella, citazione, prossimi passi, slide di chiusura |
+| File | Quando usarlo |
+|------|---------------|
+| `regione-basilicata-istituzionale.pptx` | **Presentazioni ufficiali della Regione Basilicata** — convegni, audizioni, comunicati pubblici, presentazioni in commissione. 12 slide con cornice istituzionale, fotografie e KPI |
+| `presentazione-base.pptx` | Presentazioni interne rapide, riunioni di servizio, slide di lavoro. 10 layout-tipo più sobri, senza fotografie |
 
-## Caratteristiche di accessibilità incorporate
+## Quando usare quale
+
+- **Contesto istituzionale, pubblico esterno** → `regione-basilicata-istituzionale.pptx`
+- **Riunioni interne, presentazioni veloci** → `presentazione-base.pptx`
+
+## Caratteristiche di accessibilità incorporate (entrambi)
 
 - **Ogni slide ha un titolo** nel placeholder previsto (essenziale per gli screen reader)
-- Font Arial: titoli 36-44pt, corpo 20-22pt (sopra il minimo raccomandato di 18pt)
-- Contrasti verificati:
-  - Bianco su navy `#1F4E79` → 12.6:1
-  - Testo `#212121` su bianco → 16.1:1
-  - Accento `#C0504D` su bianco → 5.4:1
-- Niente caselle di testo "libere" con contenuti essenziali
+- Font sans-serif, titoli 36-44pt, corpo 20-22pt
+- Contrasti verificati WCAG 2.1 AA
 - Aspect ratio 16:9 widescreen
 - Properties del file compilate (titolo, autore, lingua)
 
-## Come usarlo
+## Come usarli
 
-1. Apri `presentazione-base.pptx`.
+1. Apri il template desiderato.
 2. *File → Salva con nome*.
 3. **Duplica le slide** che ti servono: tasto destro sulla slide → *Duplica*.
 4. **Compila sempre il titolo della slide**: gli screen reader lo annunciano per primo.
@@ -28,7 +30,7 @@ Un template `.pptx` con dieci layout-tipo, conforme a **WCAG 2.1 AA**:
    - *Inserisci → Immagine*
    - Tasto destro → *Modifica testo alternativo*
    - Se decorativa: spunta *"Contrassegna come decorativa"*
-6. Controlla l'**ordine di lettura**: *Home → Disponi → Riquadro di selezione*. L'ordine nell'elenco (dal basso verso l'alto) è quello con cui gli elementi vengono letti dagli screen reader.
+6. Controlla l'**ordine di lettura**: *Home → Disponi → Riquadro di selezione*.
 
 ## Verifica
 
