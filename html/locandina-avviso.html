@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <!-- TEMPLATE: Locandina / avviso digitale (WCAG 2.1 AA) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="[Avviso / locandina: oggetto, data, luogo]">
+  <title>[Titolo dell'evento] - [Data]</title>
+  <style>
+    :root {
+      --navy: #1f4e79;
+      --navy-dark: #163a5c;
+      --coral: #c0504d;
+      --sand: #f5f0e8;
+      --text: #212121;
+      --text-muted: #424242;
+    }
+    @page { size: A4 portrait; margin: 1.5cm; }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      font-family: 'Inter', -apple-system, 'Segoe UI', Arial, sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.55;
+      color: var(--text);
+      background: #fafafa;
+      margin: 0;
+      padding: 2rem 1rem;
+      -webkit-font-smoothing: antialiased;
+    }
+    .skip-link {
+      position: absolute; left: -9999px; top: 0;
+      background: var(--navy); color: #fff;
+      padding: .85rem 1.2rem; z-index: 100;
+      text-decoration: none; font-weight: 600;
+    }
+    .skip-link:focus { left: 0; top: 0; }
+    a:focus, button:focus { outline: 3px solid var(--coral); outline-offset: 2px; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    article.locandina {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 24px rgba(31, 78, 121, 0.12);
+    }
+    header.testata {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+      color: #fff;
+      padding: 2rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    header.testata::after {
+      content: "";
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 200px; height: 200px;
+      background: rgba(192, 80, 77, 0.25);
+      border-radius: 50%;
+    }
+    header.testata p { margin: 0; font-size: 1.05rem; }
+    header.testata strong { font-size: 1.25rem; display: block; margin-bottom: .25rem; }
+
+    .corpo { padding: 2.5rem 2.5rem; }
+    .occhiello {
+      display: inline-block;
+      background: var(--coral);
+      color: #fff;
+      font-size: .8rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: .35rem .85rem;
+      border-radius: 999px;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      color: var(--navy);
+      margin: .25rem 0 1rem;
+      line-height: 1.1;
+      letter-spacing: -.5px;
+    }
+    .descrizione {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin: 1rem 0 2rem 0;
+      max-width: 56ch;
+    }
+
+    dl.dettagli {
+      display: grid;
+      grid-template-columns: max-content 1fr;
+      gap: .75rem 1.5rem;
+      margin: 0 0 2rem;
+      padding: 1.5rem;
+      background: var(--sand);
+      border-radius: 8px;
+    }
+    dl.dettagli dt {
+      font-weight: 700;
+      color: var(--navy);
+      font-size: .9rem;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+    dl.dettagli dd { margin: 0; color: var(--text); }
+
+    section.programma { margin: 2rem 0; }
+    section.programma h2 {
+      font-size: 1.4rem;
+      color: var(--navy);
+      border-bottom: 2px solid var(--coral);
+      padding-bottom: .35rem;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+    section.programma ol {
+      list-style: none;
+      padding: 0;
+      counter-reset: prog;
+    }
+    section.programma li {
+      counter-increment: prog;
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 1rem;
+      padding: .75rem 0;
+      border-bottom: 1px solid #eee;
+      align-items: baseline;
+    }
+    section.programma li strong {
+      color: var(--coral);
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .cta {
+      background: linear-gradient(135deg, var(--navy), var(--navy-dark));
+      color: #fff;
+      padding: 1.5rem 2rem;
+      text-align: center;
+      margin: 2rem 0;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(31, 78, 121, 0.2);
+    }
+    .cta p { margin: 0; font-size: 1.1rem; }
+    .cta a {
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-decoration: underline;
+      text-decoration-color: var(--coral);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 4px;
+    }
+
+    footer.piede {
+      margin-top: 2rem;
+      padding-top: 1.25rem;
+      border-top: 2px dashed #ddd;
+      font-size: .95rem;
+      color: var(--text-muted);
+    }
+    footer.piede a { color: var(--navy); font-weight: 500; }
+
+    @media print {
+      body { background: #fff; padding: 0; }
+      article.locandina { box-shadow: none; }
+      .cta { background: #fff; color: var(--navy); border: 2px solid var(--navy); box-shadow: none; }
+      .cta a { color: var(--navy); }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#contenuto-locandina">Salta al contenuto principale</a>
+  <main>
+    <article class="locandina" aria-labelledby="titolo-evento">
+      <header class="testata">
+        <p><strong>[Nome dell'ente / organizzatore]</strong>[Sotto-organizzatore o riferimento, opzionale]</p>
+      </header>
+      <div class="corpo" id="contenuto-locandina">
+        <span class="occhiello">[Convegno - Workshop - Incontro]</span>
+        <h1 id="titolo-evento">[Titolo dell'evento]</h1>
+        <p class="descrizione">[Breve descrizione (1-3 righe) che chiarisce di cosa si tratta e a chi e' rivolto.]</p>
+
+        <dl class="dettagli" aria-label="Dettagli dell'evento">
+          <dt>Data</dt><dd>[Giorno della settimana, GG mese AAAA]</dd>
+          <dt>Orario</dt><dd>dalle [HH:MM] alle [HH:MM]</dd>
+          <dt>Luogo</dt><dd>[Nome della sede], [Indirizzo], [Citta]</dd>
+          <dt>Modalita</dt><dd>[In presenza / Online / Mista]</dd>
+          <dt>Iscrizione</dt><dd>[Libera / Obbligatoria entro il GG/MM/AAAA]</dd>
+          <dt>Accessibilita</dt>
+          <dd>Sede accessibile a persone con disabilita motoria. Interpretariato LIS / sottotitolazione su richiesta: contattare entro [GG/MM/AAAA].</dd>
+        </dl>
+
+        <section class="programma" aria-labelledby="programma-titolo">
+          <h2 id="programma-titolo">Programma</h2>
+          <ol>
+            <li><strong>[HH:MM]</strong> <span>[Apertura lavori / saluti istituzionali]</span></li>
+            <li><strong>[HH:MM]</strong> <span>[Intervento di [Nome Cognome] su [tema]]</span></li>
+            <li><strong>[HH:MM]</strong> <span>[Pausa]</span></li>
+            <li><strong>[HH:MM]</strong> <span>[Tavola rotonda / Domande del pubblico]</span></li>
+            <li><strong>[HH:MM]</strong> <span>[Chiusura]</span></li>
+          </ol>
+        </section>
+
+        <div class="cta">
+          <p>Iscriviti entro il [GG/MM/AAAA]</p>
+          <p><a href="[https://www.esempio.it/iscrizione]">www.esempio.it/iscrizione</a></p>
+        </div>
+
+        <footer class="piede">
+          <p><strong>Informazioni</strong>: [Nome Cognome], [Ruolo] - email <a href="mailto:[indirizzo@email.it]">[indirizzo@email.it]</a> - tel. [+39 ___ _______]</p>
+          <p>L'evento e' organizzato da [Nome ente] con il patrocinio di [eventuali patrocini].</p>
+        </footer>
+      </div>
+    </article>
+  </main>
+</body>
+</html>

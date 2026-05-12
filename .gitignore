@@ -1,0 +1,33 @@
+# File temporanei di Office / LibreOffice
+~$*
+.~lock.*
+*.tmp
+*.bak
+# Esclude file di build temporanei creati durante la generazione iniziale
+pdf/relazione.pdf
+pdf/lu*.tmp
+
+# File di sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Cache Python (per gli script di generazione)
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Output di build
+dist/
+build/
+
+# Log
+*.log
